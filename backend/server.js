@@ -110,6 +110,31 @@ app.put('/todos/:id', (req, res) => {
 
 app.delete('/todos/:id', (req, res) => {
 
+    const targetId = req.params.id;
+
+    fs.readFile(filePath, 'utf-8', (err, data) => {
+
+        if (err) {
+
+            console.log('Error reading file:', err);
+            return res.status(400).send(`An error occurred while processing your request`);
+
+        }
+        const todos = JSON.parse(data);
+
+        const updatedTodos = todos.filter(todo => todo.id !== targetId);
+
+        fs.writeFile(filePath, JSON.stringify(updatedTodos, null, 2), (err) => {
+
+            if (err) {
+                console.log('Error deleting file:', err);
+                return res.status(500).send('An error occurred while deleting the todo');
+            }
+            res.status(200).send({
+                success: "Todo deleted succefully"
+            })
+        })
+    });
 });
 
 app.listen(PORT, () => {
