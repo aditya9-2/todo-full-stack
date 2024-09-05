@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+:root{
+    --landing-color: #111827;
+    --button: #0688fa;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+}
+
+.left{
+    background-color:#000;
+    width: 50%;
+    height: calc(100vh - 0%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left img{
+    width: 25rem;
+    filter:drop-shadow(4px 4px 10px rgb(153, 153, 61));
+}
+
+.right{
+    background-color: var(--landing-color);
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+}
+.welcome-text{
+    color: #fff;
+    font-weight: 200;
+}
+
+.right .card {
+    background-color: #fff;
+    height: auto;
+    width: 20rem;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.input-label {
+    font-size: 2rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    align-self: flex-start; 
+}
+
+.right .card input{
+    padding: 12px;
+    margin-bottom: 1rem;
+    font-size: 17px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #c5bfbf;
+}
+
+input:focus{
+    color: #666;
+}
+
+
+#btn {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--button);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#btn:hover{
+    background-color: #076cc5;
+}
+
+
+@media (max-width: 726px) {
+    .left{
+        display: none;
+    }
+    .right {
+        height: 100vh; 
+        width: 100vw;
+    }   
+}
