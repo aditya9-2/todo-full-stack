@@ -1,10 +1,11 @@
-const { error } = require('console');
 const express = require('express');
 const fs = require('fs');
+const cors = require('cors');
+
 const PORT = 3000;
 
 const app = express();
-
+app.use(cors());
 app.use(express.json());
 
 const filePath = './data/todo.json';
