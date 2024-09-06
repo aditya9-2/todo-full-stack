@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = 'https://todo-full-stack-8378.onrender.com';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Handle form submission to save the username and redirect
